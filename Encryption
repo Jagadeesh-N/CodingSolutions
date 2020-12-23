@@ -1,0 +1,19 @@
+#problem link
+#https://www.hackerrank.com/challenges/encryption/problem
+
+import math
+from collections import defaultdict
+s=input()
+s1="".join(s.split())
+x=len(s1)
+root=math.sqrt(x)
+r = math.floor(root)
+c = math.ceil(root)
+d = defaultdict(str)
+for i in range(0,len(s1),c):
+    s2=s1[i:i+c]
+    for j in range(len(s2)):
+        d[j]+=s2[j]
+        
+l1=list(d.values())
+print(*l1)
