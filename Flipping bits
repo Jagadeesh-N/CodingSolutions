@@ -1,0 +1,16 @@
+#problem links
+#https://www.hackerrank.com/challenges/flipping-bits/problem
+
+q=int(input())
+for _ in range(q):
+    x=int(input())
+    xb="{:032b}".format(x)
+    L=[]
+    for i in xb:
+        if(i=='0'):
+            L.append('1')
+        elif(i=='1'):
+            L.append('0')
+    str1="".join(L)
+    db=int(str1,2)
+    print(db)
