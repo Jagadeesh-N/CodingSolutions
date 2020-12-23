@@ -1,0 +1,9 @@
+#problem link
+#https://www.hackerrank.com/challenges/countingsort1/problem
+
+n = int(input())
+arr = list(map(int, input().rstrip().split()))
+l=[0]*(100)
+for i in range(0,n):
+    l[arr[i]]=l[arr[i]]+1
+print(*l,end=" ")
