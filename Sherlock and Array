@@ -1,0 +1,21 @@
+#problem link
+#https://www.hackerrank.com/challenges/sherlock-and-array/problem
+
+q=int(input())
+for _ in range(q):
+    n=int(input())
+    arr=list(map(int,input().strip().split()))
+    sum1=sum(arr)
+    l=0
+    flag=0
+    for i in arr:
+        if(2*l==sum1-i):
+            flag=1
+            break;
+        else:
+            l=l+i
+            flag=0
+    if(flag):
+        print("YES")
+    else:
+        print("NO")
