@@ -1,0 +1,51 @@
+#problem link
+#https://www.hackerrank.com/challenges/kruskalmstrsub/problem
+
+n=list(map(int,input().strip().split()))
+V=n[0]
+E=n[1]
+graph=[]
+def find(parent,i):
+    if(parent[i]==i):
+        return i
+    return find(parent,parent[i])
+def union(parent,rank,x,y):
+    xr=find(parent,x)
+    yr=find(parent,y)
+    if(rank[xr]<rank[yr]):
+        parent[xr]=yr
+    elif(rank[xr]>rank[yr]):
+        parent[yr]=xr
+    else:
+        parent[yr]=xr
+        rank[xr]+=1
+def Krushkal():
+    result=[]
+    i=0
+    e=0
+    g1=sorted(graph,key=lambda item:item[2])
+    parent=[]
+    rank=[]
+    for j in range(V):
+        parent.append(j)
+        rank.append(0)
+    sumw=0
+    while(e<V-1):
+        u,v,w=g1[i]
+        i=i+1
+        x=find(parent,u)
+        y=find(parent,v)
+        if(x!=y):
+            sumw+=w
+            e=e+1
+            result.append([u,v,w])
+            union(parent,rank,x,y)
+    print(sumw)
+            
+    
+for i in range(E):
+    n1=list(map(int,input().strip().split()))
+    n1[0]=n1[0]-1
+    n1[1]=n1[1]-1
+    graph.append(n1)
+Krushkal()
