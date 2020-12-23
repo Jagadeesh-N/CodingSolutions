@@ -1,0 +1,19 @@
+#problem link
+#https://www.hackerrank.com/challenges/missing-numbers/problem
+
+from collections import Counter
+n=int(input())
+arr=list(map(int,input().strip().split()))
+m=int(input())
+brr=list(map(int,input().strip().split()))
+k1=Counter(arr)
+k2=Counter(brr)
+#print(k1)
+#print(k2)
+L=[]
+for i in k2:
+    if(k1[i]!=k2[i]):
+        x=abs(k1[i]-k2[i])
+        L.append(i)
+L.sort()
+print(*L,end=" ")
