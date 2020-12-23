@@ -1,0 +1,15 @@
+#problem link
+#https://www.hackerrank.com/challenges/caesar-cipher-1/problem
+
+n=int(input())
+s=input()
+key=int(input())
+cypher=""
+for i in range(n):
+    if(s[i].isalpha()):
+        mi='A' if(s[i].isupper()) else 'a'
+        ci=ord(mi)+(ord(s[i])-ord(mi)+key)%26
+        cypher+=chr(ci)
+    else:
+        cypher+=s[i]
+print(cypher)
