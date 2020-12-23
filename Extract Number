@@ -1,0 +1,22 @@
+#problem link
+#https://practice.geeksforgeeks.org/problems/extract-the-number-from-the-string/0
+
+for _ in range(int(input())):
+    s=input().replace(" ","")
+    list1=[i for i in re.split(r'([A-Za-z]+)', s) if i.isdigit()]
+    #print(list1)
+    list2=list1.copy()
+    if(len(list1)==0):
+        print("-1")
+    else:
+        for i in list2:
+            if('9' in i ):
+                list1.remove(i)
+        #print(list1)
+        if(len(list1)==0):
+            print(-1)
+        else:
+            list3=list(map(int,list1))
+            for i in list1:
+                if(str(max(list3)) in i):
+                    print(i)
