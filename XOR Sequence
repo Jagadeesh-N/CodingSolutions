@@ -1,0 +1,23 @@
+#problem link
+#https://www.hackerrank.com/challenges/xor-se/problem
+
+def XOR(x):
+    k=x%8
+    if(k==0 or k==1):
+        return x
+    elif(k==2 or k==3):
+        return 2
+    elif(k==4 or k==5):
+        return x+2
+    elif(k==6 or k==7):
+        return 0
+    return 0
+t=int(input())
+for _ in range(t):
+    left,right=list(map(int,input().split()))
+    s=XOR(right)^XOR(left-1)
+    print(s)
+    
+#reference links:
+1.https://www.youtube.com/watch?v=RQpR3MU_g7c&feature=youtu.be
+2.https://www.geeksforgeeks.org/calculate-xor-1-n/
