@@ -1,0 +1,13 @@
+#Problem link
+#https://www.hackerrank.com/challenges/the-great-xor/problem
+
+t=int(input())
+for _ in range(t):
+    x=int(input())
+    num=x
+    c=0
+    while(x):
+        x=x//2
+        c=c+1
+    result=(pow(2,c)-num-1);
+    print(result)
