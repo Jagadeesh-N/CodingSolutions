@@ -1,0 +1,22 @@
+#problem
+#https://www.hackerrank.com/challenges/anagram/problem
+
+q=int(input())
+for i in range(q):
+    s=(input())
+    x=len(s)
+    if(x%2!=0):
+        print(-1)
+    else:
+        k=x//2
+        s1=s[0:k]
+        s2=s[k:]
+        #print(s1,s2)
+        c=0
+        for i in s1:
+            idx=s2.find(i)
+            if(idx==-1):
+                c=c+1
+            else:
+                s2=s2[0:idx]+s2[idx+1:]
+        print(c)
