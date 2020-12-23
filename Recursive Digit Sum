@@ -1,0 +1,19 @@
+#problem link
+#https://www.hackerrank.com/challenges/recursive-digit-sum/problem
+
+def RDS(n):
+    if(n<10):
+        return n;
+    sum1=0
+    while(n):
+        r=n%10
+        sum1=sum1+r
+        n=n//10
+    return RDS(sum1)
+        
+n,k=list(map(int,input().split()))
+n=str(n)
+n=list(map(int,n.strip()))
+n=sum(n)
+print(RDS(n*k))
+
